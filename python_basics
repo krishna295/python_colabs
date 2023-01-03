@@ -1,0 +1,288 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/krishna295/python_colabs/blob/main/python_basics\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pOyOAs-Go3Ks",
+        "outputId": "8e6c716c-e5e2-455b-aeac-d52ec461cdc6"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "What is your name?\n",
+            "bird\n",
+            "the function is repeting, next letter is flipped and gets added to the original string: bird\n",
+            "the function is repeting, next letter is flipped and gets added to the original string: ird\n",
+            "the function is repeting, next letter is flipped and gets added to the original string: rd\n",
+            "the function is repeting, next letter is flipped and gets added to the original string: d\n",
+            "drib\n"
+          ]
+        }
+      ],
+      "source": [
+        "print(\"What is your name?\")# asks for input of your name and prints the name backwards\n",
+        "name=input()\n",
+        "\n",
+        "\n",
+        "def reverseString(any_string):\n",
+        "  if any_string == \"\":\n",
+        "    return any_string\n",
+        "  else:\n",
+        "    print(f\"the function is repeting, next letter is flipped and gets added to the original string: {any_string}\")\n",
+        "    return reverseString(any_string[1:]) + any_string[:1]\n",
+        "\n",
+        "eman=reverseString(name)\n",
+        "print (eman)"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This prints the 3rd index of a string. I learned about indexes."
+      ],
+      "metadata": {
+        "id": "CxLph5BP6iJc"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "name=\"I am hungry\" \n",
+        "print(name[3:])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CQGYNg3VwDvZ",
+        "outputId": "6a29a2ac-d65a-4db5-94b0-1b118ce833fc"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "m hungry\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This prints the length of the string \"Bird is cute.\" I learned how to use len function"
+      ],
+      "metadata": {
+        "id": "yojPKVqN7HxF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sen=\"Bird is cute.\"\n",
+        "num=len(sen)\n",
+        "print(num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p_oKPy-QzHR6",
+        "outputId": "4d5b487d-23a3-4d89-d6eb-dd5eafbdbd0e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This does not make sense."
+      ],
+      "metadata": {
+        "id": "ZJ7XQLoK7ViU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sen=\"Bird is cute.\"#hard\n",
+        "res = sum(not chr.isspace() for chr in sen)\n",
+        "print(str(res))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jHDxVSS5zeMf",
+        "outputId": "7595ef9b-377d-4278-8814-da679d6028bf"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This counts the number of charachters not including spaces. I learned how to use for loop."
+      ],
+      "metadata": {
+        "id": "IjgBB9pj7Zzl"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sen=\"Bird is cute.\"#easy\n",
+        "char_counter=0\n",
+        "for i in range(0,len(sen)):\n",
+        "  #print(sen[i])\n",
+        "  if sen[i] != \" \":\n",
+        "    char_counter = char_counter+1\n",
+        "    #print(char_counter)\n",
+        "\n",
+        "\n",
+        "print(f\"Number of chars in String: '{sen}' is: {char_counter}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Tw75EmuY3CKl",
+        "outputId": "f3a4420e-68f6-4bb2-bfb1-fbe8be1b95de"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Number of chars in String: 'Bird is cute.' is: 11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This counts the number of i's in a string. I learned how to use for loop and change programs so they are useful for more purposes."
+      ],
+      "metadata": {
+        "id": "c7phqkx97t4s"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sen=\"Bird is cute.\"#easy\n",
+        "char_counter=0\n",
+        "for i in range(0,len(sen)):\n",
+        "  #print(sen[i])\n",
+        "  if sen[i] == \"i\":\n",
+        "    char_counter = char_counter+1\n",
+        "    #print(char_counter)\n",
+        "\n",
+        "\n",
+        "print(f\"Number of i's in String: '{sen}' is: {char_counter}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5IN5S7Wq5aj4",
+        "outputId": "1102d24f-619b-46c9-e634-9e183ad5daaa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Number of i's in String: 'Bird is cute.' is: 2\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "This is the easiest way to do count number of characters in a string without spaces. I learned sen.replace."
+      ],
+      "metadata": {
+        "id": "i6PbPHZE77SO"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "sen=\"Bird is cute.\"#easy\n",
+        "sen=sen.replace(' ','')\n",
+        "num=len(sen)\n",
+        "print(num)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9NQ09rHe09E1",
+        "outputId": "1678b9ba-79cd-48f6-8ae2-fd97728060a8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "11\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
